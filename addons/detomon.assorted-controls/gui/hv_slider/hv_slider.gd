@@ -1,5 +1,5 @@
 @tool
-@icon("../icons/hv_slider.svg")
+@icon("../../icons/hv_slider.svg")
 class_name HVSlider
 extends Control
 
