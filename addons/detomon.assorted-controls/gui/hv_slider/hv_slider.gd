@@ -67,16 +67,11 @@ var _theme_cache := {
 
 func _init() -> void:
 	mouse_exited.connect(_on_mouse_exited)
+	theme_changed.connect(_update_theme_cache)
 
 
 func _enter_tree() -> void:
 	_update_theme_cache()
-
-
-func _notification(what: int) -> void:
-	match what:
-		NOTIFICATION_THEME_CHANGED:
-			_update_theme_cache()
 
 
 func _get_minimum_size() -> Vector2:

@@ -86,6 +86,7 @@ func _init() -> void:
 		return
 
 	mouse_exited.connect(_on_mouse_exited)
+	theme_changed.connect(_update_theme_cache)
 
 
 func _enter_tree() -> void:
@@ -176,12 +177,6 @@ func _gui_input(event: InputEvent) -> void:
 
 	_set_drag_element(drag_element)
 	_set_highlight_element(highlight_element)
-
-
-func _notification(what: int) -> void:
-	match what:
-		NOTIFICATION_THEME_CHANGED:
-			_update_theme_cache()
 
 
 func set_start_value(value: float) -> void:
